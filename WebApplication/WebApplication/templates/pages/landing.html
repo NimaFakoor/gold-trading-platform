@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fa" data-nav-layout="horizontal" data-nav-style="menu-click" data-menu-position="fixed" dir="rtl"
+    style="--primary-rgb: 17, 124, 102;">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="خرید و فروش آنلاین طلا">
+    <meta name="Author" content="خرید و فروش آنلاین طلا">
+    <meta name="keywords" content="خرید و فروش آنلاین طلا">
+
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../../static/assets/images/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../static/assets/images/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../static/assets/images/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../static/assets/images/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../static/assets/images/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../static/assets/images/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../static/assets/images/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../static/assets/images/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/assets/images/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../static/assets/images/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../static/assets/images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../static/assets/images/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../static/assets/images/icon/favicon-16x16.png">
+    <link rel="manifest" crossorigin="use-credentials" href="../../static/assets/images/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- TITLE -->
+    <title>خرید و فروش آنلاین طلا | Nile Gold Group</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="../static/assets/images/brand-logos/favicon.ico" type="image/x-icon">
+
+    <!-- BOOTSTRAP CSS -->
+    <link id="style" href="../static/assets/libs/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+    <!-- ICONS CSS -->
+    <link href="../static/assets/icon-fonts/icons.css" rel="stylesheet">
+
+    <!-- SWIPER CSS -->
+    <link href="../static/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- PICKER CSS -->
+    <link rel="stylesheet" href="../static/assets/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/assets/libs/%40simonwep/pickr/themes/nano.min.css">
+
+    <!-- CHOICES CSS -->
+    <link rel="stylesheet" href="../static/assets/libs/choices.js/public/assets/styles/choices.min.css">
+
+    <!-- NODE WAVES CSS -->
+    <link href="../static/assets/libs/node-waves/waves.min.css" rel="stylesheet">
+
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" href="../static/assets/libs/toastify-js/src/toastify.css">
+
+    <!-- Prism CSS -->
+    <link rel="stylesheet" href="../static/assets/libs/prismjs/themes/prism-coy.min.css">
+
+    <!-- STYLES CSS -->
+    <link href="../static/assets/css/styles.css" rel="stylesheet">
+
+    <!-- AUTO COMPLETE CSS -->
+    <link rel="stylesheet" href="../static/assets/libs/%40tarekraafat/autocomplete.js/css/autoComplete.css">
+
+    <!-- MAIN JS -->
+    <script src="../static/assets/js/main.js"></script>
+
+</head>
+
+<body class="landing-body">
+
+    <!-- SWITCHER -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="switcher-canvas" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">تنظیمات</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="">
+                <p class="switcher-style-head">حالت رنگ قالب:</p>
+                <div class="row switcher-style">
+                    <div class="col-4">
+                        <div class="form-check switch-select">
+                            <label class="form-check-label" for="switcher-light-theme">
+                                روشن
+                            </label>
+                            <input class="form-check-input" type="radio" name="theme-style" id="switcher-light-theme"
+                                checked="">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-check switch-select">
+                            <label class="form-check-label" for="switcher-dark-theme">
+                                تیره
+                            </label>
+                            <input class="form-check-input" type="radio" name="theme-style" id="switcher-dark-theme">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-colors">
+                <p class="switcher-style-head">رنگ اصلی:</p>
+                <div class="d-flex align-items-center switcher-style">
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-1" type="radio" name="theme-primary"
+                            id="switcher-primary">
+                    </div>
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-2" type="radio" name="theme-primary"
+                            id="switcher-primary1">
+                    </div>
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-3" type="radio" name="theme-primary"
+                            id="switcher-primary2">
+                    </div>
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-4" type="radio" name="theme-primary"
+                            id="switcher-primary3">
+                    </div>
+                    <div class="form-check switch-select me-3">
+                        <input class="form-check-input color-input color-primary-5" type="radio" name="theme-primary"
+                            id="switcher-primary4">
+                    </div>
+                    <div class="form-check switch-select me-3 ps-0 mt-1 color-primary-light">
+                        <div class="theme-container-primary"></div>
+                        <div class="pickr-container-primary"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="switcher-style-head">بازنشانی:</p>
+                <div class="text-center">
+                    <button id="reset-all" class="btn btn-danger mt-3">بازنشانی</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SWITCHER -->
+
+    <!-- LOADER -->
+    <div id="loader">
+        <img src="../static/assets/images/media/loader.svg" alt="">
+    </div>
+    <!-- END LOADER -->
+
+    <!-- PAGE -->
+    <div class="landing-page-wrapper">
+
+        <!-- HEADER -->
+
+        <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="{{ url_for('landing') }}" class="header-logo">
+                                <img src="../static/assets/images/brand-logos/toggle-logo.png" alt="logo"
+                                    class="toggle-logo">
+                                <img src="../static/assets/images/brand-logos/toggle-dark.png" alt="logo"
+                                    class="toggle-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a href="javascript:void(0);" class="sidemenu-toggle header-link" data-bs-toggle="sidebar">
+                            <span class="open-toggle">
+                                <i class="ri-menu-3-line fs-20"></i>
+                            </span>
+                        </a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element align-items-center">
+                        <!-- Start::header-link|switcher-icon -->
+                        <div class="btn-list d-lg-none d-flex">
+                            <a href="{{ url_for('signin') }}" class="btn btn-light">
+                                ورود
+                            </a>
+                            <a href="{{ url_for('signup') }}" class="btn btn-primary-light">
+                                ثبت‌نام
+                            </a>
+                            <button
+                                class="btn btn-icon btn-success switcher-icon d-flex align-items-center justify-content-center"
+                                data-bs-toggle="offcanvas" data-bs-target="#switcher-canvas">
+                                <i class="ri-settings-3-line"></i>
+                            </button>
+                        </div>
+                        <!-- End::header-link|switcher-icon -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-right -->
+
+            </div>
+            <!-- End::main-header-container -->
+
+        </header>
+        <!-- END HEADER -->
+
+        <!-- SIDEBAR -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <div class="container-xl">
+                <!-- Start::main-sidebar -->
+                <div class="main-sidebar">
+
+                    <!-- Start::nav -->
+                    <nav class="main-menu-container nav nav-pills sub-open">
+                        <div class="landing-logo-container">
+                            <div class="horizontal-logo">
+                                <a href="{{ url_for('landing') }}" class="header-logo">
+                                    <img src="../static/assets/images/brand-logos/desktop-logo.png" alt="logo"
+                                        class="desktop-logo">
+                                    <img src="../static/assets/images/brand-logos/desktop-dark.png" alt="logo"
+                                        class="desktop-dark">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slide-left" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                                width="24" height="24" viewbox="0 0 24 24">
+                                <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+                            </svg></div>
+                        <ul class="main-menu">
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a class="side-menu__item" href="#home">
+                                    <span class="side-menu__label">خانه</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+                            <!-- Start::slide -->
+                            <li class="slide">
+                                <a href="#contact" class="side-menu__item">
+                                    <span class="side-menu__label">تماس با ما</span>
+                                </a>
+                            </li>
+                            <!-- End::slide -->
+                        </ul>
+
+                        <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                                width="24" height="24" viewbox="0 0 24 24">
+                                <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z">
+                                </path>
+                            </svg></div>
+                        <div class="d-lg-flex d-none">
+                            <div class="btn-list d-lg-flex d-none mt-lg-2 mt-xl-0 mt-0">
+                                <a href="{{ url_for('signin') }}" class="btn btn-wave btn-light">
+                                    ورود
+                                </a>
+                                <a href="{{ url_for('signup') }}" class="btn btn-wave btn-primary">
+                                    ثبت نام
+                                </a>
+                                <button
+                                    class="btn btn-wave btn-icon btn-secondary switcher-icon d-flex align-items-center justify-content-center"
+                                    data-bs-toggle="offcanvas" data-bs-target="#switcher-canvas">
+                                    <i class="ri-settings-3-line"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- End::nav -->
+
+                </div>
+                <!-- End::main-sidebar -->
+            </div>
+
+        </aside>
+        <!-- END SIDEBAR -->
+
+        <!-- MAIN-CONTENT -->
+
+        <!-- Start::app-content -->
+        <div class="main-content landing-main px-0">
+
+            <!-- Start:: Section-1 -->
+            <div class="landing-banner" id="home">
+                <section class="section">
+                    <div class="container main-banner-container pb-lg-0">
+                        <div class="row">
+                            <div class="col-xxl-8 col-xl-7 col-lg-7 col-md-8">
+                                <div class="pt-lg-5">
+                                    <div class="mb-3">
+                                        <h6 class="fw-medium text-fixed-white op-9">سودمند و مطمئن</h6>
+                                    </div>
+                                    <p class="landing-banner-heading mb-3 text-fixed-white fw-semibold"> خرید و فروش
+                                        آنلاین طلا را با <span class="text-warning" style="font-family: monospace;">Nile
+                                            Gold Group</span> تجربه کنید.
+                                    </p>
+                                    <div class="fs-16 mb-5 text-fixed-white op-7">
+                                        کمترین اجرت و بیشترین حاشیه سود
+                                    </div>
+                                    <a href="{{ url_for('buy') }}" class="m-1 btn btn-lg bg-success text-fixed-white">
+                                        هر گرم طلا 18 عیار را با قیمت {{ format_currency(float(last_bp.amount)) }} ريال
+                                        بخرید </a>
+                                    <a href="{{ url_for('sell') }}"
+                                        class="m-1 btn btn-lg btn-secondary btn-wave waves-effect waves-light"> هر گرم
+                                        طلا 18 عیار را با قیمت {{ format_currency(float(last_sp.amount)) }} ريال بفروشید
+                                    </a>
+                                    <!-- <a href="{{ url_for('buy') }}" class="m-1 btn btn-lg bg-success text-fixed-white">
+                                        هر مثقال طلا 17 عیار را با قیمت {{
+                                        format_currency(convert_gram_mithqal(float(last_bp.amount))) }} ريال بخرید </a>
+                                    <a href="{{ url_for('sell') }}"
+                                        class="m-1 btn btn-lg btn-secondary btn-wave waves-effect waves-light"> هر مثقال
+                                        طلا 17 عیار را با قیمت {{
+                                        format_currency(convert_gram_mithqal(float(last_sp.amount))) }} ريال بفروشید
+                                    </a> -->
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-4 my-auto position-relative">
+                                <div class="text-end landing-main-image landing-heading-img">
+                                    <img src="../static/assets/images/media/media-78.png" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- End:: Section-1 -->
+
+            <!-- Start:: Section-2 -->
+            <section class="section" id="contact">
+                <div class="container text-center">
+                    <span class="landing-text-heading">تماس با ما</span>
+                    <h3 class="fw-semibold mt-3 mb-2">سوالی دارید؟ خوشحال می‌شویم از شما بشنویم.</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-9">
+                            <p class="text-muted fs-15 mb-5 fw-normal">هر زمان که سوال یا درخواست داشتید، با ما تماس
+                                بگیرید.</p>
+                        </div>
+                    </div>
+                    <div class="card-body p-0 bg-white">
+                        <div class="row text-start">
+                            <div>
+                                <div class="p-5 border-end">
+
+                                    <div class="row gy-3">
+
+                                        <form method="POST">
+
+                                            <div>
+                                                <div class="row gy-3">
+                                                    <div class="col-xl-12">
+                                                        <label for="contact-address-name" class="form-label">نام کامل
+                                                            :</label>
+                                                        <input type="text" name="name" class="form-control"
+                                                            id="contact-address-name"
+                                                            placeholder="نام و نام خانوادگی خود را وارد کنید"
+                                                            required="">
+                                                    </div>
+                                                    <div class="col-xl-12">
+                                                        <label for="contact-address-phone" class="form-label">شماره
+                                                            همراه
+                                                            :</label>
+                                                        <input type="tel"
+                                                            pattern="09(0[1-2]|[0-9][0-9]|3[0-9]|2[0-1])-?[0-9]{3}-?[0-9]{4}"
+                                                            name="phone" class="form-control" id="contact-address-phone"
+                                                            placeholder="شماره همراه خود را وارد کنید" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label for="contact-address-message" class="form-label">پیام :</label>
+                                                <textarea class="form-control" name="message"
+                                                    id="contact-address-message" rows="8" required=""></textarea>
+                                            </div>
+                                            <div class="col-xl-12">
+                                                <div class="d-flex mt-3">
+                                                    <div class="ms-auto">
+                                                        <input type="submit" class="btn btn-primary btn-wave"
+                                                            value="ارسال پیام">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- End:: Section-2 -->
+
+            <!-- Start:: Section-3 -->
+            <section class="section landing-footer text-fixed-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-12 mb-md-0 mb-3">
+                            <div class="px-4">
+                                <p class="fw-medium mb-3">
+                                    <a href="{{ url_for('landing') }}"><img style="width: 40%;"
+                                            src="../static/assets/images/brand-logos/desktop-dark.png" alt=""></a>
+                                </p>
+                                <p class="mb-2 op-6 fw-normal">
+                                    خرید و فروش آنلاین طلا
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12">
+                        </div>
+                        <div class="col-md-2 col-sm-6 col-12">
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-12">
+                            <div class="px-4">
+                                <h6 class="fw-medium text-fixed-white">تماس</h6>
+                                <ul class="list-unstyled fw-normal landing-footer-list">
+                                    <li><a href="javascript:void(0);" class="text-fixed-white op-6"><i
+                                                class="ri-phone-line me-1 align-middle"></i>09121378555</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End:: Section-3 -->
+
+
+        </div>
+        <!-- End::app-content -->
+
+        <!-- END MAIN-CONTENT -->
+
+        <!-- FOOTER -->
+
+        <div class="text-center landing-main-footer py-3">
+            <div class="container">
+                <span class="text-muted"> <span id="year"></span>
+                    طراحی با <span class="bi bi-heart-fill text-danger"></span> توسط <a href="" target="_blank">
+                        <span class="fw-medium text-primary">Nile Gold Group</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+
+    </div>
+    <!-- END PAGE-->
+
+    <!-- SCRIPTS -->
+
+    <!-- SCROLL-TO-TOP -->
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- POPPER JS -->
+    <script src="../static/assets/libs/%40popperjs/core/umd/popper.min.js"></script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="../static/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- PICKER JS -->
+    <script src="../static/assets/libs/flatpickr/flatpickr.min.js"></script>
+    <script src="../static/assets/libs/%40simonwep/pickr/pickr.es5.min.js"></script>
+
+    <!-- AUTO COMPLETE JS -->
+    <script src="../static/assets/libs/%40tarekraafat/autocomplete.js/autoComplete.min.js"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="../static/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- SWIPER JS -->
+    <script src="../static/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- CHOICES JS -->
+    <script src="../static/assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <!-- DEFAULTMENU JS -->
+    <script src="../static/assets/js/defaultmenu.js"></script>
+
+    <!-- NODE WAVES JS -->
+    <script src="../static/assets/libs/node-waves/waves.min.js"></script>
+
+    <!-- CHOICES JS -->
+    <script src="../static/assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+    <!-- Internal Landing JS -->
+    <script src="../static/assets/js/landing.js"></script>
+
+    <!-- STICKY JS -->
+    <script src="../static/assets/js/sticky.js"></script>
+
+    <!-- LANDING-MAIN JS -->
+    <script src="../static/assets/js/landing-main.js"></script>
+
+    <!-- Toastify JS -->
+    <script src="../static/assets/libs/toastify-js/src/toastify.js"></script>
+
+    <!-- Prism JS -->
+    <script src="../static/assets/libs/prismjs/prism.js"></script>
+    <script src="../static/assets/js/prism-custom.js"></script>
+
+    <!-- page specific script -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../static/assets/css/persianDatepicker-default.css">
+    <script src="../static/assets/js/persianDatepicker.min.js"></script>
+
+    <script>
+        $(function () {
+
+            //<!-- flashed messages -->
+            //{% for message in get_flashed_messages() %}
+            Toastify({
+                text: "{{ message }}",
+                duration: 8000,
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                positionRight: true, // `true` or `false`
+                backgroundColor: "linear-gradient(to right, var(--primary-color), rgb(215, 124, 247))"
+            }).showToast();
+            //{% endfor %}
+            //<!-- flashed messages -->
+
+
+            /* page loader */
+            function hideLoader() {
+                const loader = document.getElementById("loader");
+                loader.classList.add("d-none")
+            }
+
+            window.addEventListener("load", hideLoader);
+            /* page loader */
+
+        });
+
+    </script>
+
+    <script src="../static/assets/js/custom.js"></script>
+<!-- 
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@3.4/dist/add-to-homescreen.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/philfung/add-to-homescreen@3.4/dist/add-to-homescreen.min.js"></script>
+ -->
+    <!-- ====================  BEGIN: initialize add-to-homescreen library  ==================== -->
+    <!-- 
+    <script>
+        window.addEventListener("load", function () {
+            window.AddToHomeScreenInstance = window.AddToHomeScreen({
+                appName: "خرید و فروش آنلاین طلا | Nile Gold Group", // Name of the app. [Required]
+                appNameDisplay: "standalone", // Display position of the app name [Optional]
+                appIconUrl: "../static/assets/images/icon/apple-icon-180x180.png", // App icon link (square, at least 40 x 40 pixels) [Required]
+                assetUrl: "../static/assets/images/icon/", // Link to directory of library image assets [Required]
+                maxModalDisplayCount: -1, // If set, the modal will only show this many times [Optional. Default: -1 (no limit).]
+                displayOptions: { showMobile: true, showDesktop: true }, // show on mobile/desktop [Optional] Default: show everywhere
+                allowClose: true, // allow the user to close the modal by tapping outside of it. [Optional. Default: true]
+                showArrow: true, // show the arrow on the modal [Optional. Default: true]
+                // (Debugging: Use this.clearModalDisplayCount() to reset the count)
+            });
+            window.AddToHomeScreenInstance.show(); // popup is only shown if web app is not already added to homescreen
+        });
+    </script>
+    -->
+    <!-- ====================  END: initialize add-to-homescreen library  ==================== -->
+
+    <!-- END SCRIPTS -->
+
+</body>
+
+</html>

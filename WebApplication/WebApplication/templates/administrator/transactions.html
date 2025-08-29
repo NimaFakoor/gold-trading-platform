@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="main-content app-content">
+  <div class="container-fluid">
+
+    <!-- Start::page-header -->
+    <div class="d-flex align-items-center justify-content-between my-4 page-header-breadcrumb flex-wrap gap-2">
+    </div>
+    <!-- End::page-header -->
+
+    <!-- Start:: row-1 -->
+    <div class="row">
+      <div>
+
+        <div class="card custom-card">
+
+          <div class="card-body">
+            <div id="grid-transactions"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- End:: row-1 -->
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+
+  (function () {
+    'use script';
+
+    // fixed header
+    new gridjs.Grid({
+      pagination: true,
+      search: true,
+      sort: true,
+      fixedHeader: true,
+      height: '350px',
+      columns: [{
+        name: "نوع تراکنش",
+        width: "80px",
+      }, {
+        name: "مبلغ",
+        width: "150px",
+      }, {
+        name: "وزن معامله شده",
+        width: "100px",
+      }, {
+        name: "نرخ گرم طلا 18 عیار معامله شده",
+        width: "150px",
+      }, {
+        name: "نرخ مثقال طلا 17 عیار معامله شده",
+        width: "150px",
+      }, {
+        name: "نام و نام خانوادگی",
+        width: "100px",
+      }, {
+        name: "شماره همراه",
+        width: "100px",
+      }, {
+        name: "وضعیت تراکنش",
+        width: "100px",
+      }, {
+        name: "تاریخ ایجاد تراکنش",
+        width: "150px",
+      }],
+      data: [
+        //{% for i in transactions %}
+        ["{{ i.transactions_type }}", "{{ format_currency(float(i.amount)) }}", "{{ format_currency(float(i.weight)) }}", "{{ format_currency(float(i.gold_rate)) }}", "{{ format_currency(convert_gram_mithqal(float(i.gold_rate))) }}", "{{ i.user_name }}", "{{ i.user_phone }}", "{{ i.status }}", "{{ i.registration }}"],
+        //{% endfor %}  
+      ],
+    }).render(document.getElementById("grid-transactions"));
+    // fixed header
+  })();
+
+</script>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="main-content app-content">
+  <div class="container-fluid">
+
+    <!-- Start::page-header -->
+    <div class="d-flex align-items-center justify-content-between my-4 page-header-breadcrumb flex-wrap gap-2">
+    </div>
+    <!-- End::page-header -->
+
+    <!-- Start:: row-1 -->
+    <div class="row">
+      <div>
+
+        <div class="card custom-card">
+
+          <div class="card-body">
+            <div id="grid-users"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- End:: row-1 -->
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+
+  (function () {
+    'use script';
+
+    // fixed header
+    new gridjs.Grid({
+      pagination: true,
+      search: true,
+      sort: true,
+      fixedHeader: true,
+      height: '350px',
+      columns: [{
+        name: "نام و نام خانوادگی",
+        width: "100px",
+      }, {
+        name: "شماره همراه",
+        width: "100px",
+      }, {
+        name: "وضعیت",
+        width: "100px",
+      }, {
+        name: "اعتبار",
+        width: "150px",
+      }, {
+        name: "دارایی طلا به گرم",
+        width: "150px",
+      }, , {
+        name: "شماره شبا",
+        width: "220px",
+      }, {
+        name: "تاریخ ایجاد حساب",
+        width: "100px",
+      }],
+      data: [
+        //{% for i in users %}
+        ["{{ i.first_and_last_name }}", "{{ i.phone }}", "{{ i.verification_status }}", "{{ format_currency(float(i.credit)) }}", "{{ format_currency(float(i.assets)) }}", "{{ i.international_bank_account_number }}", "{{ i.registration }}"],
+        //{% endfor %}  
+      ],
+    }).render(document.getElementById("grid-users"));
+    // fixed header
+  })();
+
+</script>
+{% endblock %}

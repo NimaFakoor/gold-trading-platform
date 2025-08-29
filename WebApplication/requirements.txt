@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+itsdangerous
+Jinja2
+Werkzeug
+
+jdatetime
+
+pandas
+numpy
+
+Flask-Admin

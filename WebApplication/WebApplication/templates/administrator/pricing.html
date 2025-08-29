@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="main-content app-content">
+  <div class="container-fluid">
+
+    <!-- Start::page-header -->
+    <div class="d-flex align-items-center justify-content-between my-4 page-header-breadcrumb flex-wrap gap-2">
+    </div>
+    <!-- End::page-header -->
+
+    <!-- Start:: row-1 -->
+    <div class="row">
+      <div>
+
+        <div class="card custom-card">
+
+          <div style="margin: 10px;">
+            <p class="fw-semibold"> قیمت فعلی : <i dir="ltr">آخرین بروزرسانی {{ last_bp.registration }}</i></p>
+            <div class="btn btn-success btn-sm">خرید <b id="bp"></b> ريال</div>
+            <div class="btn btn-secondary btn-sm">فروش <b id="sp"></b> ريال</div>
+          </div>
+
+          <form method="POST">
+
+            <div class="p-3 border-bottom border-top border-block-end-dashed tab-content">
+              <div class="tab-pane overflow-hidden p-0 border-0 active show" id="account-pane" role="tabpanel"
+                aria-labelledby="account" tabindex="0">
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-1">
+                  <div class="fw-semibold d-block fs-15">قیمت‌گذاری جدید :</div>
+                </div>
+                <div class="row gy-3">
+                  <div class="col-xl-12">
+                  </div>
+
+                  <div class="col-xl-6">
+                    <label for="BuyMithqal" class="form-label">قیمت خرید هر مثقال طلا :</label>
+                    <input type="text" onkeyup="convertBuyMithqal();" step=0.0001 name="BuyMithqal" class="form-control"
+                      id="BuyMithqal" placeholder="قیمت خرید هر مثقال طلا به ريال" required="">
+                  </div>
+                  <div class="col-xl-6">
+                    <label for="BuyGram" class="form-label">قیمت خرید هر گرم طلا :</label>
+                    <input type="text" onkeyup="convertBuyGram();" step=0.0001 name="BuyGram" class="form-control"
+                      id="BuyGram" placeholder="قیمت خرید هر گرم طلا به ريال" required="">
+                  </div>
+
+                  <div class="col-xl-6">
+                    <label for="SellMithqal" class="form-label">قیمت فروش هر مثقال طلا :</label>
+                    <input type="text" onkeyup="convertSellMithqal();" step=0.0001 name="SellMithqal"
+                      class="form-control" id="SellMithqal" placeholder="قیمت فروش هر مثقال طلا به ريال" required="">
+                  </div>
+                  <div class="col-xl-6">
+                    <label for="SellGram" class="form-label">قیمت فروش هر گرم طلا :</label>
+                    <input type="text" onkeyup="convertSellGram();" step=0.0001 name="SellGram" class="form-control"
+                      id="SellGram" placeholder="قیمت فروش هر گرم طلا به ريال" required="">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card-footer border-top-0">
+              <div>
+                <input type="submit" onclick="return confirm('آیا از ثبت این قیمت ها مطمئن هستید؟')"
+                  class="btn btn-primary btn-wave waves-effect waves-light" value="ثبت تغییرات">
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- End:: row-1 -->
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+
+  const inpNumber1 = document.getElementById("BuyMithqal");
+  inpNumber1.addEventListener("keyup", handlerSeparateNumbers)
+  const inpNumber2 = document.getElementById("BuyGram");
+  inpNumber2.addEventListener("keyup", handlerSeparateNumbers)
+  const inpNumber3 = document.getElementById("SellMithqal");
+  inpNumber3.addEventListener("keyup", handlerSeparateNumbers)
+  const inpNumber4 = document.getElementById("SellGram");
+  inpNumber4.addEventListener("keyup", handlerSeparateNumbers)
+
+  // functions
+  function funcReverseString(str) {
+    return str.split('').reverse().join('');
+  }
+
+  // event handlers
+  function handlerSeparateNumbers(e) {
+    const thisElement = e.target;
+    let thisElementValue = thisElement.value;
+
+    thisElementValue = thisElementValue.replace(/,/g, "");
+
+    if (isNaN(Number(thisElementValue))) {
+      alert("لطفا از وارد کردن حروف خودداری فرمایید !")
+      return false;
+    }
+
+    let seperatedNumber = thisElementValue.toString();
+    seperatedNumber = funcReverseString(seperatedNumber);
+    seperatedNumber = seperatedNumber.split("");
+
+    let tmpSeperatedNumber = "";
+
+    j = 0;
+    for (let i = 0; i < seperatedNumber.length; i++) {
+      tmpSeperatedNumber += seperatedNumber[i];
+      j++;
+      if (j == 3) {
+        tmpSeperatedNumber += ",";
+        j = 0;
+      }
+    }
+
+    seperatedNumber = funcReverseString(tmpSeperatedNumber);
+    if (seperatedNumber[0] === ",") seperatedNumber = seperatedNumber.replace(",", "");
+    thisElement.value = seperatedNumber;
+  }
+
+
+
+  function convertBuyMithqal() {
+    var BuyMithqal = document.getElementById('BuyMithqal').value;
+    BuyMithqal = BuyMithqal.replace(/,/g, '');
+    var result = parseFloat(BuyMithqal) / 4.3318;
+    result = result.toFixed(5);
+    const number = new Intl.NumberFormat('en-US', { style: "decimal" }).format(result);
+    document.getElementById('BuyGram').value = number;
+  }
+  function convertBuyGram() {
+    var BuyGram = document.getElementById('BuyGram').value;
+    BuyGram = BuyGram.replace(/,/g, '');
+    var result = parseFloat(BuyGram) * 4.3318;
+    result = result.toFixed(6);
+    const number = new Intl.NumberFormat('en-US', { style: "decimal" }).format(result);
+    document.getElementById('BuyMithqal').value = number;
+  }
+  function convertSellMithqal() {
+    var SellMithqal = document.getElementById('SellMithqal').value;
+    SellMithqal = SellMithqal.replace(/,/g, '');
+    var result = parseFloat(SellMithqal) / 4.3318;
+    result = result.toFixed(6);
+    const number = new Intl.NumberFormat('en-US', { style: "decimal" }).format(result);
+    document.getElementById('SellGram').value = number;
+  }
+  function convertSellGram() {
+    var SellGram = document.getElementById('SellGram').value;
+    SellGram = SellGram.replace(/,/g, '');
+    var result = parseFloat(SellGram) * 4.3318;
+    result = result.toFixed(6);
+    const number = new Intl.NumberFormat('en-US', { style: "decimal" }).format(result);
+    document.getElementById('SellMithqal').value = number;
+  }
+
+  let bp_num = "{{ last_bp.amount }}";
+  const bp_text = new Intl.NumberFormat('en-US', { style: "decimal" }).format(bp_num);
+  document.getElementById("bp").innerHTML = bp_text;
+
+  let sp_num = "{{ last_sp.amount }}";
+  const sp_text = new Intl.NumberFormat('en-US', { style: "decimal" }).format(sp_num);
+  document.getElementById("sp").innerHTML = sp_text;
+
+</script>
+{% endblock %}

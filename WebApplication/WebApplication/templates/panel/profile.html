@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="main-content app-content">
+  <div class="container-fluid">
+
+    <!-- Start::page-header -->
+    <div class="d-flex align-items-center justify-content-between my-4 page-header-breadcrumb flex-wrap gap-2">
+    </div>
+    <!-- End::page-header -->
+
+    <!-- Start:: row-1 -->
+    <div class="row">
+      <div>
+
+        <div class="card custom-card">
+
+          <form method="POST">
+
+            <div class="p-3 border-bottom border-top border-block-end-dashed tab-content">
+              <div class="tab-pane overflow-hidden p-0 border-0 active show" id="account-pane" role="tabpanel"
+                aria-labelledby="account" tabindex="0">
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-1">
+                  <div class="fw-semibold d-block fs-15">تنظیمات حساب کاربری :</div>
+                  <div class="btn btn-primary btn-sm">{{ user.verification_status }}</div>
+                </div>
+                <div class="row gy-3">
+                  <div class="col-xl-12">
+                  </div>
+                  <div class="col-xl-6">
+                    <label for="profile-name" class="form-label">نام و نام خانوادگی :</label>
+                    <input type="text" name="first_and_last_name" class="form-control" id="profile-name"
+                      value="{{ user.first_and_last_name }}" placeholder="نام را وارد کنید" required="">
+                  </div>
+                  <div class="col-xl-6">
+                    <label for="profile-phone" class="form-label">شماره همراه :</label>
+                    <input type="tel" class="form-control" id="profile-phone" value="{{ user.phone }}" disabled="true">
+                  </div>
+                  <div class="col-xl-6">
+                    <label for="profile-international_bank_account_number" class="form-label">شماره شبا :</label>
+                    <input type="text" name="international_bank_account_number" class="form-control"
+                      id="profile-international_bank_account_number"
+                      value="{{ user.international_bank_account_number }}" placeholder="شماره شبا" required="">
+                  </div>
+                  <div class="col-xl-6">
+                    <label for="profile-bank_card_number" class="form-label">شماره کارت :</label>
+                    <input type="text" name="bank_card_number" class="form-control" id="profile-bank_card_number"
+                      value="{{ user.bank_card_number }}" placeholder="شماره کارت" required="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer border-top-0">
+              <div>
+                <input type="submit" class="btn btn-primary btn-wave waves-effect waves-light" value="ذخیره تغییرات">
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- End:: row-1 -->
+
+  </div>
+</div>
+
+{% endblock %}

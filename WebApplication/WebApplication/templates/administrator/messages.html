@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="main-content app-content">
+  <div class="container-fluid">
+
+    <!-- Start::page-header -->
+    <div class="d-flex align-items-center justify-content-between my-4 page-header-breadcrumb flex-wrap gap-2">
+    </div>
+    <!-- End::page-header -->
+
+    <!-- Start:: row-1 -->
+    <div class="row">
+      <div>
+
+        <div class="card custom-card">
+
+          <div class="card-body">
+            <div id="grid-messages"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- End:: row-1 -->
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+
+  (function () {
+    'use script';
+
+    new gridjs.Grid({
+      pagination: true,
+      search: true,
+      sort: true,
+      fixedHeader: true,
+      height: '350px',
+      columns: [{
+        name: "شناسه پیام",
+        width: "50px",
+      }, {
+        name: "نام و نام خانوادگی",
+        width: "200px",
+      }, {
+        name: "شماره همراه",
+        width: "100px",
+      }, {
+        name: "متن پیام",
+        width: "300px",
+      }, {
+        name: "تاریخ",
+        width: "150px",
+      }],
+      data: [
+        //{% for i in messages %}
+        ["{{ i.id }}", "{{ i.name }}", "{{ i.phone }}", "{{ i.message }}", "{{ i.date }}"],
+        //{% endfor %}  
+      ],
+    }).render(document.getElementById("grid-messages"));
+
+  })();
+
+</script>
+{% endblock %}

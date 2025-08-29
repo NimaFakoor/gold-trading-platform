@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fa" data-nav-layout="vertical" data-width="fullwidth" data-toggled="close" dir="rtl" loader="enable"
+  style="--primary-rgb: 17, 124, 102;">
+
+<head>
+
+  <!-- Meta Data -->
+  <meta charset="UTF-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Description" content="خرید و فروش آنلاین طلا">
+  <meta name="Author" content="خرید و فروش آنلاین طلا">
+  <meta name="keywords" content="خرید و فروش آنلاین طلا">
+
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../../static/assets/images/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../static/assets/images/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../static/assets/images/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../static/assets/images/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../static/assets/images/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../static/assets/images/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../static/assets/images/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../static/assets/images/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/assets/images/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../static/assets/images/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../static/assets/images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../static/assets/images/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../static/assets/images/icon/favicon-16x16.png">
+    <link rel="manifest" crossorigin="use-credentials" href="../../static/assets/images/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+  <!-- TITLE -->
+  <title>خرید و فروش آنلاین طلا | Nile Gold Group</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" href="../static/assets/images/brand-logos/favicon.ico" type="image/x-icon">
+
+  <!-- BOOTSTRAP CSS -->
+  <link id="style" href="../static/assets/libs/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+  <!-- ICONS CSS -->
+  <link href="../static/assets/icon-fonts/icons.css" rel="stylesheet">
+
+  <!-- SWIPER CSS -->
+  <link href="../static/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- PICKER CSS -->
+  <link rel="stylesheet" href="../static/assets/libs/flatpickr/flatpickr.min.css">
+  <link rel="stylesheet" href="../static/assets/libs/%40simonwep/pickr/themes/nano.min.css">
+
+  <!-- CHOICES CSS -->
+  <link rel="stylesheet" href="../static/assets/libs/choices.js/public/assets/styles/choices.min.css">
+
+  <!-- NODE WAVES CSS -->
+  <link href="../static/assets/libs/node-waves/waves.min.css" rel="stylesheet">
+
+  <!-- Toastify CSS -->
+  <link rel="stylesheet" href="../static/assets/libs/toastify-js/src/toastify.css">
+
+  <!-- Prism CSS -->
+  <link rel="stylesheet" href="../static/assets/libs/prismjs/themes/prism-coy.min.css">
+
+  <!-- STYLES CSS -->
+  <link href="../static/assets/css/styles.css" rel="stylesheet">
+
+  <!-- SIMPLEBAR CSS -->
+  <link rel="stylesheet" href="../static/assets/libs/simplebar/simplebar.min.css">
+
+  <!-- AUTO COMPLETE CSS -->
+  <link rel="stylesheet" href="../static/assets/libs/%40tarekraafat/autocomplete.js/css/autoComplete.css">
+
+  <!-- Grid CSS -->
+  <link rel="stylesheet" href="../static/assets/libs/gridjs/theme/mermaid.min.css">
+
+  <!-- MAIN JS -->
+  <script src="../static/assets/js/main.js"></script>
+
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <img src="../static/assets/images/media/loader.svg" alt="">
+  </div>
+  <!-- END LOADER -->
+
+  <!-- PAGE -->
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="app-header sticky" id="header">
+
+      <!-- Start::main-header-container -->
+      <div class="main-header-container container-fluid">
+
+        <!-- Start::header-content-left -->
+        <div class="header-content-left">
+
+          <!-- Start::header-element -->
+          <div class="header-element">
+            <div class="horizontal-logo">
+              <a href="{{ url_for('dashboard') }}" class="header-logo">
+                <img src="../static/assets/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                <img src="../static/assets/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                <img src="../static/assets/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                <img src="../static/assets/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+              </a>
+            </div>
+          </div>
+          <!-- End::header-element -->
+
+          <!-- Start::header-element -->
+          <div class="header-element">
+            <!-- Start::header-link -->
+            <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link" data-bs-toggle="sidebar"
+              href="javascript:void(0);">
+              <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon menu-btn" width="32" height="32"
+                fill="#000000" viewbox="0 0 256 256">
+                <path
+                  d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
+                </path>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="header-link-icon menu-btn-close" width="32" height="32"
+                fill="#000000" viewbox="0 0 256 256">
+                <path
+                  d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z">
+                </path>
+              </svg>
+            </a>
+            <!-- End::header-link -->
+          </div>
+          <!-- End::header-element -->
+
+
+        </div>
+        <!-- End::header-content-left -->
+
+        <!-- Start::header-content-right -->
+        <ul class="header-content-right">
+          <!-- Start::header-element -->
+          <li class="header-element" style="margin-left: 10px;">
+            <!-- End::header-link|dropdown-toggle -->
+            <button class="btn btn-primary btn-sm w-100" onClick="window.location.reload();">بروزرسانی</button>
+          </li>
+          <!-- End::header-element -->
+          <!-- Start::header-element -->
+          <li class="header-element">
+            <!-- End::header-link|dropdown-toggle -->
+            <a class="btn btn-primary btn-sm w-100" href="{{ url_for('logout') }}">خروج</a>
+          </li>
+          <!-- End::header-element -->
+        </ul>
+        <!-- End::header-content-right -->
+
+      </div>
+      <!-- End::main-header-container -->
+
+    </header>
+    <!-- END HEADER -->
+
+    <!-- SIDEBAR -->
+    {% if session["user_role"] == "trader" %}
+    {% include 'panel/sidebar.html' %}
+    {% else %}
+    {% include 'administrator/sidebar.html' %}
+    {% endif %}
+    <!-- END SIDEBAR -->
+
+    <!-- MAIN-CONTENT -->
+    <!-- Start::app-content -->
+    {% block content %}{% endblock %}
+    <!-- End::app-content -->
+    <!-- END MAIN-CONTENT -->
+
+    <!-- FOOTER -->
+
+    <footer class="footer mt-auto py-3 bg-white text-center">
+      <div class="container">
+        <span class="text-muted"> <span id="year"></span>
+          طراحی با <span class="bi bi-heart-fill text-danger"></span> توسط <a href="{{ url_for('landing') }}" target="_blank">
+            <span class="fw-medium text-primary">Nile Gold Group</span>
+          </a>
+
+
+        </span>
+      </div>
+    </footer>
+    <!-- END FOOTER -->
+
+  </div>
+  <!-- END PAGE-->
+
+  <!-- SCRIPTS -->
+
+  <!-- SCROLL-TO-TOP -->
+  <div class="scrollToTop">
+    <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+  </div>
+  <div id="responsive-overlay"></div>
+
+  <!-- POPPER JS -->
+  <script src="../static/assets/libs/%40popperjs/core/umd/popper.min.js"></script>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="../static/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- PICKER JS -->
+  <script src="../static/assets/libs/flatpickr/flatpickr.min.js"></script>
+  <script src="../static/assets/libs/%40simonwep/pickr/pickr.es5.min.js"></script>
+
+  <!-- AUTO COMPLETE JS -->
+  <script src="../static/assets/libs/%40tarekraafat/autocomplete.js/autoComplete.min.js"></script>
+
+  <!-- Apex Charts JS -->
+  <script src="../static/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+  <!-- SWIPER JS -->
+  <script src="../static/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+  <!-- CHOICES JS -->
+  <script src="../static/assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+  <!-- DEFAULTMENU JS -->
+  <script src="../static/assets/js/defaultmenu.js"></script>
+
+  <!-- NODE WAVES JS -->
+  <script src="../static/assets/libs/node-waves/waves.min.js"></script>
+
+  <!-- SIMPLEBAR JS -->
+  <script src="../static/assets/libs/simplebar/simplebar.min.js"></script>
+  <script src="../static/assets/js/simplebar.js"></script>
+
+  <!-- CHOICES JS -->
+  <script src="../static/assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+  <!-- Internal Landing JS -->
+  <script src="../static/assets/js/landing.js"></script>
+
+  <!-- STICKY JS -->
+  <script src="../static/assets/js/sticky.js"></script>
+
+  <!-- Toastify JS -->
+  <script src="../static/assets/libs/toastify-js/src/toastify.js"></script>
+
+  <!-- Prism JS -->
+  <script src="../static/assets/libs/prismjs/prism.js"></script>
+  <script src="../static/assets/js/prism-custom.js"></script>
+
+  <!-- Grid JS -->
+  <script src="../static/assets/libs/gridjs/gridjs.umd.js"></script>
+
+  <!-- page specific script -->
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../static/assets/css/persianDatepicker-default.css">
+  <script src="../static/assets/js/persianDatepicker.min.js"></script>
+
+  <script>
+    $(function () {
+
+      //<!-- flashed messages -->
+      //{% for message in get_flashed_messages() %}
+      Toastify({
+        text: "{{ message }}",
+        duration: 8000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        positionRight: true, // `true` or `false`
+        backgroundColor: "linear-gradient(to right, var(--primary-color), rgb(215, 124, 247))"
+      }).showToast();
+      //{% endfor %}
+      //<!-- flashed messages -->
+
+    });
+
+  </script>
+
+  {% block script %}{% endblock %}
+
+  <script src="../static/assets/js/custom.js"></script>
+
+  <!-- END SCRIPTS -->
+
+</body>
+
+</html>

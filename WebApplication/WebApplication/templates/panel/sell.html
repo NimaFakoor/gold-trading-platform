@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="main-content app-content">
+  <div class="container-fluid">
+
+    <!-- Start::page-header -->
+    <div class="d-flex align-items-center justify-content-between my-4 page-header-breadcrumb flex-wrap gap-2">
+    </div>
+    <!-- End::page-header -->
+
+    <!-- Start:: row-1 -->
+    <div class="row">
+      <div>
+
+        <div class="card custom-card">
+
+          <div style="margin: 10px;">
+            <p class="fw-semibold"> قیمت فعلی : <i dir="ltr">آخرین بروزرسانی قیمت {{ last_sp.registration }}</i></p>
+            <div class="btn btn-secondary btn-sm" style="margin-top: 5px;">نرخ فروش طلا معامله شده گرم ( طلای 18 عیار)
+              <b id="sp"></b> ريال
+            </div>
+            <div class="btn btn-secondary btn-sm" style="margin-top: 5px;">نرخ فروش طلا معامله شده مثقال (طلای 17 عیار)
+              <b id="sp_mithqal"></b> ريال
+            </div>
+
+          </div>
+
+          <form method="POST">
+
+            <div class="p-3 border-bottom border-top border-block-end-dashed tab-content">
+              <div class="tab-pane overflow-hidden p-0 border-0 active show" id="account-pane" role="tabpanel"
+                aria-labelledby="account" tabindex="0">
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-1">
+                  <div class="fw-semibold d-block fs-15">درخواست فروش :</div>
+                </div>
+                <div class="row gy-3">
+                  <div class="col-xl-12">
+                  </div>
+
+                  <div class="col-xl-6">
+                    <label for="amount" class="form-label">مبلغ فروش :</label>
+                    <input type="text" onkeyup="convert_amount();" step=0.001 name="amount" class="form-control"
+                      id="amount" value="" placeholder="مبلغ فروش را به ریال وارد کنید" required="">
+                    <label class="input-group-text" for="amount">مبلغ فروش به ريال می‌باشد</label>
+                  </div>
+                  <div class="col-xl-6">
+                    <label for="weight" class="form-label">وزن :</label>
+                    <input type="text" onkeyup="convert_weight();" step=0.001 name="weight" class="form-control"
+                      id="weight" value="" placeholder="وزن را به گرم وارد کنید" required="">
+                    <label class="input-group-text" for="weight">وزن به گرم می‌باشد</label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="card-footer border-top-0">
+              <div>
+                <input type="submit" onclick="return confirm('آیا از ثبت این فروش مطمئن هستید؟')"
+                  class="btn btn-primary btn-wave waves-effect waves-light" value="ثبت سفارش">
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- End:: row-1 -->
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+
+  const inpNumber1 = document.getElementById("amount");
+  inpNumber1.addEventListener("keyup", handlerSeparateNumbers)
+  const inpNumber2 = document.getElementById("weight");
+  inpNumber2.addEventListener("keyup", handlerSeparateNumbers)
+
+
+  // functions
+  function funcReverseString(str) {
+    return str.split('').reverse().join('');
+  }
+
+  // event handlers
+  function handlerSeparateNumbers(e) {
+    const thisElement = e.target;
+    let thisElementValue = thisElement.value;
+
+    thisElementValue = thisElementValue.replace(/,/g, "");
+
+    if (isNaN(Number(thisElementValue))) {
+      alert("لطفا از وارد کردن حروف خودداری فرمایید !")
+      return false;
+    }
+
+    let seperatedNumber = thisElementValue.toString();
+    seperatedNumber = funcReverseString(seperatedNumber);
+    seperatedNumber = seperatedNumber.split("");
+
+    let tmpSeperatedNumber = "";
+
+    j = 0;
+    for (let i = 0; i < seperatedNumber.length; i++) {
+      tmpSeperatedNumber += seperatedNumber[i];
+      j++;
+      if (j == 3) {
+        tmpSeperatedNumber += ",";
+        j = 0;
+      }
+    }
+
+    seperatedNumber = funcReverseString(tmpSeperatedNumber);
+    if (seperatedNumber[0] === ",") seperatedNumber = seperatedNumber.replace(",", "");
+    thisElement.value = seperatedNumber;
+  }
+
+  let sp = parseFloat("{{ last_sp.amount }}");
+
+  function convert_amount() {
+    var amount = document.getElementById('amount').value;
+    amount = amount.replace(/,/g, '');
+    var result = parseFloat(amount) / sp;
+    result = result.toFixed(5);
+    const number = new Intl.NumberFormat('en-US', { style: "decimal" }).format(result);
+    document.getElementById('weight').value = number;
+  }
+  function convert_weight() {
+    var weight = document.getElementById('weight').value;
+    weight = weight.replace(/,/g, '');
+    var result = parseFloat(weight) * sp;
+    result = result.toFixed(5);
+    const number = new Intl.NumberFormat('en-US', { style: "decimal" }).format(result);
+    document.getElementById('amount').value = number;
+  }
+
+
+  // let bp_num = "{{ last_bp.amount }}";
+  // const bp_text = new Intl.NumberFormat('en-US', { style: "decimal" }).format(bp_num);
+  // document.getElementById("bp").innerHTML = bp_text;
+
+  let sp_num = "{{ last_sp.amount }}";
+  const sp_text = new Intl.NumberFormat('en-US', { style: "decimal" }).format(sp_num);
+  document.getElementById("sp").innerHTML = sp_text;
+
+  // gram to mithqal
+  let mithqal = parseFloat(sp_num) * 4.3318;
+  const mithqal_text = new Intl.NumberFormat('en-US', { style: "decimal" }).format(mithqal);
+  document.getElementById("sp_mithqal").innerHTML = mithqal_text;
+
+</script>
+{% endblock %}
