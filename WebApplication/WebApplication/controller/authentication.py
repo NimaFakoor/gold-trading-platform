@@ -103,6 +103,45 @@ def signin():
         title='login'
     )
 
+@app.route("/reset-password", methods=["GET", "POST"])
+def reset_password():
+    """Renders the reset password page."""
+
+    if request.method == "POST":
+
+        phone = request.form["phone"]
+
+        code = str(random.randint(100000, 999999))
+        
+        url = "https://api2.ippanel.com/api/v1/sms/pattern/normal/send"
+        apikey = "OWZiZmUzNzgtYThjYS00N2NjLTkxMTYtODFmMDAzMTY1NmQxNzhhNDc1ZmUxZTFiYmM3M2RjZTRhNGY5YTkxMDg1NmY="
+        payload = json.dumps({
+        "code": "1762l6p6tvmm1dy",
+        "sender": "+983000505",
+        "recipient": phone,
+        "variable": {
+            "password": code
+        }
+        })
+        headers = {
+        'apikey': apikey,
+        'Content-Type': 'application/json'
+        }
+        requests.request("POST", url, headers=headers, data=payload)
+        
+        user = User.query.filter_by(phone=phone).first()
+        user.password = generate_password_hash(code)
+        db.session.commit()
+        db.session.close()
+        
+        flash("رمز عبور برای شما پیامک شد")
+        return redirect(url_for("signin"))
+        
+    return render_template(
+        "authentication/reset-password.html",
+        title='reset-password'
+    )
+
 @app.route("/logout")
 def logout():
     """User logout/authentication/session management."""
