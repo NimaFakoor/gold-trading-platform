@@ -13,11 +13,12 @@ class UserModelView(ModelView):
             #flash("لطفا در کار با داده ها دقت کنید")
             return redirect(url_for("signin"))
 
-    can_delete = False  # disable model deletion
-    page_size = 50  # the number of entries to display on the list view
+    page_size = 100  # the number of entries to display on the list view
     can_export = True
+    can_create = True
+    can_edit = True
     column_exclude_list = ['password']
-    form_excluded_columns = ['registration']
+    form_excluded_columns = ['registration','password']
 
 class TransactionsModelView(ModelView):
     
@@ -26,9 +27,10 @@ class TransactionsModelView(ModelView):
             #flash("لطفا در کار با داده ها دقت کنید")
             return redirect(url_for("signin"))
 
-    can_delete = False  # disable model deletion
     page_size = 100  # the number of entries to display on the list view
     can_export = True
+    can_create = True
+    can_edit = True
     column_exclude_list = ['description','content']
     form_excluded_columns = ['registration']
 

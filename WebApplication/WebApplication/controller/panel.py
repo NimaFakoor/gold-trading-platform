@@ -58,7 +58,7 @@ def profile():
 
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
         CHAT_ID = "nile_gold"
-        TEXT = f"کاربر {first_and_last_name} با شماره تلفن {session["user_phone"]} ثبت نام کرد لطفا او را تایید کنید"
+        TEXT = f"کاربر {first_and_last_name} با شماره تلفن {session['user_phone']} ثبت نام کرد لطفا او را تایید کنید"
         url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -103,7 +103,7 @@ def deposit():
         registration = str(jdatetime.datetime.now())[0:19]
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
         CHAT_ID = "nile_gold"
-        TEXT = f"کاربر {session["first_and_last_name"]} با شماره تلفن {session["user_phone"]} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
         url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -148,7 +148,7 @@ def withdrawal():
         registration = str(jdatetime.datetime.now())[0:19]
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
         CHAT_ID = "nile_gold"
-        TEXT = f"کاربر {session["first_and_last_name"]} با شماره تلفن {session["user_phone"]} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
         url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -198,7 +198,7 @@ def gold_deposit():
         registration = str(jdatetime.datetime.now())[0:19]
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
         CHAT_ID = "nile_gold"
-        TEXT = f"کاربر {session["first_and_last_name"]} با شماره تلفن {session["user_phone"]} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
         url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -248,7 +248,7 @@ def gold_withdrawal():
         registration = str(jdatetime.datetime.now())[0:19]
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
         CHAT_ID = "nile_gold"
-        TEXT = f"کاربر {session["first_and_last_name"]} با شماره تلفن {session["user_phone"]} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
         url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -298,7 +298,7 @@ def buy():
         registration = str(jdatetime.datetime.now())[0:19]
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
         CHAT_ID = "nile_gold"
-        TEXT = f"کاربر {session["first_and_last_name"]} با شماره تلفن {session["user_phone"]} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
         url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -348,7 +348,7 @@ def sell():
         registration = str(jdatetime.datetime.now())[0:19]
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
         CHAT_ID = "nile_gold"
-        TEXT = f"کاربر {session["first_and_last_name"]} با شماره تلفن {session["user_phone"]} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
         url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,

@@ -11,7 +11,7 @@ import jdatetime
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    phone = db.Column(db.String(100), unique=True, nullable = True)
+    phone = db.Column(db.String(100), nullable = True)
     password = db.Column(db.String, nullable = True)
     role = db.Column(db.String(50), nullable = True)
     credit = db.Column(db.String(100), nullable = True)

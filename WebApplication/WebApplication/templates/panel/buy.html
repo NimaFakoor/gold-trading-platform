@@ -55,7 +55,7 @@
             </div>
             <div class="card-footer border-top-0">
               <div>
-                <input type="submit" onclick="return confirm('آیا از ثبت این خرید مطمئن هستید؟')"
+                <input type="submit" onclick="checkFunction(); return confirm('آیا از ثبت این خرید مطمئن هستید؟')"
                   class="btn btn-primary btn-wave waves-effect waves-light" value="ثبت سفارش">
               </div>
             </div>
@@ -154,6 +154,16 @@
   const sp_text = new Intl.NumberFormat('en-US', { style: "decimal" }).format(sp_num);
   document.getElementById("sp").innerHTML = sp_text;
 */
+
+  function checkFunction() {
+    result1 = document.getElementById('amount').value;
+    result2 = document.getElementById('weight').value;
+
+    if (isNaN(result1) || isNaN(result2)) {
+      document.getElementById('amount').value = 0;
+      document.getElementById('weight').value = 0;
+    }
+  }
 
 </script>
 {% endblock %}
