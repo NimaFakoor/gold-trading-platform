@@ -1,3 +1,4 @@
 *.pyc
 WebApplication/serverlog.log
 WebApplication/WebApplication/database/local_DB.db
+WebApplication/serverlog.log
