@@ -1,6 +1,6 @@
 # gold trading platform
 
-     Nile Gold Group : https://nilegoldgroup.org/
+     gold trading platform
  
 ## Run
 

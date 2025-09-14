@@ -15,7 +15,7 @@ def administrator_pricing():
     """administrator_pricing"""
     if not session.get("logged_in"):
         abort(401)
-
+    pricing()
     if request.method == "POST":
 
         BuyGram = request.form["BuyGram"]

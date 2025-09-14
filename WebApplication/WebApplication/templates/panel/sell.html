@@ -19,10 +19,10 @@
           <div style="margin: 10px;">
             <p class="fw-semibold"> قیمت فعلی : <i dir="ltr">آخرین بروزرسانی قیمت {{ last_sp.registration }}</i></p>
             <div class="btn btn-secondary btn-sm" style="margin-top: 5px;">نرخ فروش طلا معامله شده گرم ( طلای 18 عیار)
-              <b id="sp"></b> ريال
+              <b id="sp"></b> تومان
             </div>
             <div class="btn btn-secondary btn-sm" style="margin-top: 5px;">نرخ فروش طلا معامله شده مثقال (طلای 17 عیار)
-              <b id="sp_mithqal"></b> ريال
+              <b id="sp_mithqal"></b> تومان
             </div>
 
           </div>
@@ -42,8 +42,8 @@
                   <div class="col-xl-6">
                     <label for="amount" class="form-label">مبلغ فروش :</label>
                     <input type="text" onkeyup="convert_amount();" step=0.001 name="amount" class="form-control"
-                      id="amount" value="" placeholder="مبلغ فروش را به ریال وارد کنید" required="">
-                    <label class="input-group-text" for="amount">مبلغ فروش به ريال می‌باشد</label>
+                      id="amount" value="" placeholder="مبلغ فروش را به تومان وارد کنید" required="">
+                    <label class="input-group-text" for="amount">مبلغ فروش به تومان می‌باشد</label>
                   </div>
                   <div class="col-xl-6">
                     <label for="weight" class="form-label">وزن :</label>
@@ -156,15 +156,15 @@
   document.getElementById("sp_mithqal").innerHTML = mithqal_text;
 
 
-  function checkFunction() {
-    result1 = document.getElementById('amount').value;
-    result2 = document.getElementById('weight').value;
+  // function checkFunction() {
+  //   result1 = document.getElementById('amount').value;
+  //   result2 = document.getElementById('weight').value;
 
-    if (isNaN(result1) || isNaN(result2)) {
-      document.getElementById('amount').value = 0;
-      document.getElementById('weight').value = 0;
-    }
-  }
+  //   if (isNaN(result1) || isNaN(result2)) {
+  //     document.getElementById('amount').value = 0;
+  //     document.getElementById('weight').value = 0;
+  //   }
+  // }
 
 </script>
 {% endblock %}

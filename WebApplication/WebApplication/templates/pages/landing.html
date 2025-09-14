@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" data-nav-layout="horizontal" data-nav-style="menu-click" data-menu-position="fixed" dir="rtl"
-    style="--primary-rgb: 17, 124, 102;">
+    style="--primary-rgb: 239,191,4;">
 
 <head>
 
@@ -11,8 +11,6 @@
     <meta name="Description" content="خرید و فروش آنلاین طلا">
     <meta name="Author" content="خرید و فروش آنلاین طلا">
     <meta name="keywords" content="خرید و فروش آنلاین طلا">
-
-    <meta name="mobile-web-app-capable" content="yes" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="../../static/assets/images/icon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../../static/assets/images/icon/apple-icon-60x60.png">
@@ -32,9 +30,12 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <meta name="mobile-web-app-capable" content="yes" />
+
+
 
     <!-- TITLE -->
-    <title>خرید و فروش آنلاین طلا | Nile Gold Group</title>
+    <title>خرید و فروش آنلاین طلا | okati gold</title>
 
     <!-- FAVICON -->
     <link rel="icon" href="../static/assets/images/brand-logos/favicon.ico" type="image/x-icon">
@@ -310,26 +311,25 @@
                                         <h6 class="fw-medium text-fixed-white op-9">سودمند و مطمئن</h6>
                                     </div>
                                     <p class="landing-banner-heading mb-3 text-fixed-white fw-semibold"> خرید و فروش
-                                        آنلاین طلا را با <span class="text-warning" style="font-family: monospace;">Nile
-                                            Gold Group</span> تجربه کنید.
+                                        آنلاین طلا را با <span style="font-family: monospace; color: #000;">okati gold</span> تجربه کنید.
                                     </p>
                                     <div class="fs-16 mb-5 text-fixed-white op-7">
                                         کمترین اجرت و بیشترین حاشیه سود
                                     </div>
                                     <a href="{{ url_for('buy') }}" class="m-1 btn btn-lg bg-success text-fixed-white">
-                                        هر گرم طلا 18 عیار را با قیمت {{ format_currency(float(last_bp.amount)) }} ريال
+                                        هر گرم طلا 18 عیار را با قیمت {{ format_currency(last_bp.amount) }} تومان
                                         بخرید </a>
                                     <a href="{{ url_for('sell') }}"
                                         class="m-1 btn btn-lg btn-secondary btn-wave waves-effect waves-light"> هر گرم
-                                        طلا 18 عیار را با قیمت {{ format_currency(float(last_sp.amount)) }} ريال بفروشید
+                                        طلا 18 عیار را با قیمت {{ format_currency(last_sp.amount) }} تومان بفروشید
                                     </a>
                                     <!-- <a href="{{ url_for('buy') }}" class="m-1 btn btn-lg bg-success text-fixed-white">
                                         هر مثقال طلا 17 عیار را با قیمت {{
-                                        format_currency(convert_gram_mithqal(float(last_bp.amount))) }} ريال بخرید </a>
+                                        format_currency(convert_gram_mithqal(last_bp.amount)) }} تومان بخرید </a>
                                     <a href="{{ url_for('sell') }}"
                                         class="m-1 btn btn-lg btn-secondary btn-wave waves-effect waves-light"> هر مثقال
                                         طلا 17 عیار را با قیمت {{
-                                        format_currency(convert_gram_mithqal(float(last_sp.amount))) }} ريال بفروشید
+                                        format_currency(convert_gram_mithqal(last_sp.amount)) }} تومان بفروشید
                                     </a> -->
                                 </div>
                             </div>
@@ -436,7 +436,7 @@
                                 <h6 class="fw-medium text-fixed-white">تماس</h6>
                                 <ul class="list-unstyled fw-normal landing-footer-list">
                                     <li><a href="javascript:void(0);" class="text-fixed-white op-6"><i
-                                                class="ri-phone-line me-1 align-middle"></i>09121378555</a></li>
+                                                class="ri-phone-line me-1 align-middle"></i>09103306774</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -457,7 +457,7 @@
             <div class="container">
                 <span class="text-muted"> <span id="year"></span>
                     طراحی با <span class="bi bi-heart-fill text-danger"></span> توسط <a href="" target="_blank">
-                        <span class="fw-medium text-primary">Nile Gold Group</span>
+                        <span class="fw-medium text-primary">okati gold</span>
                     </a>
                 </span>
             </div>
@@ -572,7 +572,7 @@
     <script>
         window.addEventListener("load", function () {
             window.AddToHomeScreenInstance = window.AddToHomeScreen({
-                appName: "خرید و فروش آنلاین طلا | Nile Gold Group", // Name of the app. [Required]
+                appName: "خرید و فروش آنلاین طلا | okati gold", // Name of the app. [Required]
                 appNameDisplay: "standalone", // Display position of the app name [Optional]
                 appIconUrl: "../static/assets/images/icon/apple-icon-180x180.png", // App icon link (square, at least 40 x 40 pixels) [Required]
                 assetUrl: "../static/assets/images/icon/", // Link to directory of library image assets [Required]

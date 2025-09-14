@@ -21,7 +21,7 @@
                 <div class="d-flex align-items-start justify-content-between mb-3 flex-wrap">
                   <div>
                     <span class="d-block mb-3 fw-medium">قیمت خرید</span>
-                    <h5 class="fw-semibold lh-1 mb-0">{{ format_currency(float(last_bp.amount)) }} ريال</h5>
+                    <h5 class="fw-semibold lh-1 mb-0">{{ format_currency(float(last_bp.amount)) }} تومان</h5>
                   </div>
                   <div class="text-end">
                     <div class="mb-4">
@@ -43,7 +43,7 @@
                 <div class="d-flex align-items-start justify-content-between mb-3 flex-wrap">
                   <div>
                     <span class="d-block mb-3 fw-medium">قیمت فروش</span>
-                    <h5 class="fw-semibold lh-1 mb-0">{{ format_currency(float(last_sp.amount)) }} ريال</h5>
+                    <h5 class="fw-semibold lh-1 mb-0">{{ format_currency(float(last_sp.amount)) }} تومان</h5>
                   </div>
                   <div class="text-end">
                     <div class="mb-4">
@@ -65,7 +65,7 @@
                 <div class="d-flex align-items-start justify-content-between mb-3 flex-wrap">
                   <div>
                     <span class="d-block mb-3 fw-medium">مجموع دارایی طلا</span>
-                    <h5 class="fw-semibold lh-1 mb-0">{{ format_currency(float(user.assets)) }} گرم</h5>
+                    <h5 class="fw-semibold lh-1 mb-0" style="direction: ltr;">{{ format_currency(float(user.assets)) }}</h5>گرم
                   </div>
                   <div class="text-end">
                     <div class="mb-4">
@@ -88,7 +88,7 @@
                 <div class="d-flex align-items-start justify-content-between mb-3 flex-wrap">
                   <div>
                     <span class="d-block mb-3 fw-medium">اعتبار نقدی</span>
-                    <h5 class="fw-semibold lh-1 mb-0">{{ format_currency(float(user.credit)) }} ريال</h5>
+                    <h5 class="fw-semibold lh-1 mb-0" style="direction: ltr;">{{ format_currency(float(user.credit)) }}</h5>تومان
                   </div>
                   <div class="text-end">
                     <div class="mb-4">

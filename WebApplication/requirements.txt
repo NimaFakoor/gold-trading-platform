@@ -4,9 +4,15 @@ itsdangerous
 Jinja2
 Werkzeug
 
+requests
+
+asyncio
+
 jdatetime
 
 pandas
 numpy
 
 Flask-Admin
+
+#telethon

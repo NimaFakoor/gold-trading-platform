@@ -21,7 +21,7 @@ def dashboard():
         flash("لطفا مشخصات خود را تکمیل کنید")
         return redirect(url_for("profile"))
 
-
+    pricing()
 
     last_bp = BuyPrice.query.order_by(desc(BuyPrice.id)).first()
     last_sp = SellPrice.query.order_by(desc(SellPrice.id)).first()
@@ -65,11 +65,11 @@ def profile():
             "chat_id": CHAT_ID,
             "text": TEXT
         }
-        requests.post(url, data=payload)
+        #requests.post(url, data=payload)
 
         #telegram
-        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
-        CHAT_ID = "125230887"
+        TOKEN = "8463756332:AAFqmjnWpUssZ2mYwM-IF4WSI3xhbzWfsJo"
+        CHAT_ID = "100571768"
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -113,7 +113,7 @@ def deposit():
         transactions_type = "واریز"
         registration = str(jdatetime.datetime.now())[0:19]
        
-        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} تومان و وزن {weight} گرم با مظنه {gold_rate} تومان در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
 
         #eitaa
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
@@ -123,11 +123,11 @@ def deposit():
             "chat_id": CHAT_ID,
             "text": TEXT
         }
-        requests.post(url, data=payload)
+        #requests.post(url, data=payload)
 
         #telegram
-        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
-        CHAT_ID = "125230887"
+        TOKEN = "8463756332:AAFqmjnWpUssZ2mYwM-IF4WSI3xhbzWfsJo"
+        CHAT_ID = "100571768"
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -171,7 +171,7 @@ def withdrawal():
         transactions_type = "برداشت"
         registration = str(jdatetime.datetime.now())[0:19]
         
-        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} تومان و وزن {weight} گرم با مظنه {gold_rate} تومان در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
 
         #eitaa
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
@@ -181,11 +181,11 @@ def withdrawal():
             "chat_id": CHAT_ID,
             "text": TEXT
         }
-        requests.post(url, data=payload)
+        #requests.post(url, data=payload)
 
         #telegram
-        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
-        CHAT_ID = "125230887"
+        TOKEN = "8463756332:AAFqmjnWpUssZ2mYwM-IF4WSI3xhbzWfsJo"
+        CHAT_ID = "100571768"
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -234,7 +234,7 @@ def gold_deposit():
         transactions_type = "واریز طلا"
         registration = str(jdatetime.datetime.now())[0:19]
 
-        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} تومان و وزن {weight} گرم با مظنه {gold_rate} تومان در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
 
         #eitaa
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
@@ -244,11 +244,11 @@ def gold_deposit():
             "chat_id": CHAT_ID,
             "text": TEXT
         }
-        requests.post(url, data=payload)
+        #requests.post(url, data=payload)
 
         #telegram
-        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
-        CHAT_ID = "125230887"
+        TOKEN = "8463756332:AAFqmjnWpUssZ2mYwM-IF4WSI3xhbzWfsJo"
+        CHAT_ID = "100571768"
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -296,7 +296,7 @@ def gold_withdrawal():
         amount = 0
         transactions_type = "برداشت طلا"
         registration = str(jdatetime.datetime.now())[0:19]
-        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} تومان و وزن {weight} گرم با مظنه {gold_rate} تومان در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
 
         #eitaa
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
@@ -306,11 +306,11 @@ def gold_withdrawal():
             "chat_id": CHAT_ID,
             "text": TEXT
         }
-        requests.post(url, data=payload)
+        #requests.post(url, data=payload)
 
         #telegram
-        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
-        CHAT_ID = "125230887"
+        TOKEN = "8463756332:AAFqmjnWpUssZ2mYwM-IF4WSI3xhbzWfsJo"
+        CHAT_ID = "100571768"
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -339,6 +339,7 @@ def buy():
         flash("حساب شما تأیید نشده، لطفا صبر کنید")
         return redirect(url_for("dashboard"))
 
+    pricing()
 
     last_bp = BuyPrice.query.order_by(desc(BuyPrice.id)).first()
     last_sp = SellPrice.query.order_by(desc(SellPrice.id)).first()
@@ -359,7 +360,7 @@ def buy():
         transactions_type = "خرید"
         registration = str(jdatetime.datetime.now())[0:19]
 
-        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} تومان و وزن {weight} گرم با مظنه {gold_rate} تومان در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
 
         #eitaa
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
@@ -369,11 +370,11 @@ def buy():
             "chat_id": CHAT_ID,
             "text": TEXT
         }
-        requests.post(url, data=payload)
+        #requests.post(url, data=payload)
 
         #telegram
-        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
-        CHAT_ID = "125230887"
+        TOKEN = "8463756332:AAFqmjnWpUssZ2mYwM-IF4WSI3xhbzWfsJo"
+        CHAT_ID = "100571768"
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
@@ -402,6 +403,7 @@ def sell():
         flash("حساب شما تأیید نشده، لطفا صبر کنید")
         return redirect(url_for("dashboard"))
 
+    pricing()
 
     last_bp = BuyPrice.query.order_by(desc(BuyPrice.id)).first()
     last_sp = SellPrice.query.order_by(desc(SellPrice.id)).first()
@@ -422,7 +424,7 @@ def sell():
         transactions_type = "فروش"
         registration = str(jdatetime.datetime.now())[0:19]
 
-        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} تومان و وزن {weight} گرم با مظنه {gold_rate} تومان در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
 
         #eitaa
         TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
@@ -432,11 +434,11 @@ def sell():
             "chat_id": CHAT_ID,
             "text": TEXT
         }
-        requests.post(url, data=payload)
+        #requests.post(url, data=payload)
 
         #telegram
-        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
-        CHAT_ID = "125230887"
+        TOKEN = "8463756332:AAFqmjnWpUssZ2mYwM-IF4WSI3xhbzWfsJo"
+        CHAT_ID = "100571768"
         url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
         payload = {
             "chat_id": CHAT_ID,
