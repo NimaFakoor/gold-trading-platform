@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="main-content app-content">
+  <div class="container-fluid">
+
+    <!-- Start::page-header -->
+    <div class="d-flex align-items-center justify-content-between my-4 page-header-breadcrumb flex-wrap gap-2">
+    </div>
+    <!-- End::page-header -->
+
+    <!-- Start:: row-1 -->
+    <div class="row">
+      <div>
+
+        <div class="card custom-card">
+          <div class="card-header justify-content-between">
+            <div class="card-title">
+              اطلاعیه‌ها
+            </div>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#announcementModal">
+              ایجاد اطلاعیه‌
+            </button>
+
+            <div class="prism-toggle">
+              <input type="text" class="form-control" id="myInput" onkeyup="myFunction()" placeholder="جستجو">
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table text-nowrap" id="myTable">
+                <thead>
+                  <tr>
+                    <th scope="col">اطلاعیه</th>
+                    <th scope="col">شماره</th>
+                    <th scope="col">تاریخ ایجاد</th>
+                    <th scope="col">وضعیت</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in announcements %}
+                  <tr>
+                    <th scope="row">{{ i.message }}</th>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.date }}</td>
+                    <td>
+                      <a class="btn btn-sm btn-outline-danger"
+                        href="{{ url_for('administrator_delete_announcements', sid = i.id) }}"
+                        onclick="return confirm('آیا میخواهید این اطلاعیه را حذف کنید؟')">
+                        حذف اطلاعیه
+                      </a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer border-top-0 d-none">
+
+          </div>
+        </div>
+
+
+
+        <div class="modal fade" id="announcementModal" tabindex="-1" aria-labelledby="announcementLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="announcementabel1">ایجاد اطلاعیه‌</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+              </div>
+              <form method="POST">
+                <div class="modal-body">
+                  <div>
+                    <label for="message" class="form-label">متن اطلاعیه :</label>
+                    <textarea class="form-control" name="message" id="message" rows="8"
+                      required=""></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+                  <input type="submit" class="btn btn-primary" value="ایجاد اطلاعیه">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <!-- End:: row-1 -->
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+</script>
+
+{% endblock %}

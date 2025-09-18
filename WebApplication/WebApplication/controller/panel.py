@@ -26,9 +26,12 @@ def dashboard():
     last_bp = BuyPrice.query.order_by(desc(BuyPrice.id)).first()
     last_sp = SellPrice.query.order_by(desc(SellPrice.id)).first()
 
+    last_announcement = Announcements.query.order_by(desc(Announcements.id)).first()
+
+
     user = User.query.filter_by(id=session["user_id"]).first()
 
-    return render_template("panel/index.html" , float=float, format_currency=format_currency, last_bp=last_bp, last_sp=last_sp, user=user, title='dashboard')
+    return render_template("panel/index.html" , last_announcement=last_announcement, float=float, format_currency=format_currency, last_bp=last_bp, last_sp=last_sp, user=user, title='dashboard')
 
 @app.route("/panel/profile", methods=["GET", "POST"])
 @login_required
@@ -279,3 +282,14 @@ def transactions():
     transactions = Transactions.query.filter_by(user_id=session["user_id"]).order_by(Transactions.id.desc()).all()
 
     return render_template("panel/transactions.html", float=float, convert_gram_mithqal=convert_gram_mithqal, format_currency=format_currency, transactions=transactions, title='transactions')
+
+@app.route("/panel/announcements", methods=["GET", "POST"])
+@login_required
+def announcements():
+    """announcements"""
+    if not session.get("logged_in"):
+        abort(401)
+
+    announcements = Announcements.query.order_by(Announcements.id.desc()).all()
+    return render_template("panel/announcements.html" , announcements=announcements, title='announcements')
+##

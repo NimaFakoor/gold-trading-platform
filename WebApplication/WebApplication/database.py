@@ -49,6 +49,11 @@ class SellPrice(db.Model):
     amount = db.Column(db.String(100), nullable=True)
     registration = db.Column(db.String(50), nullable=False, default=str(jdatetime.datetime.now()))
 
+class Announcements(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    message = db.Column(db.Text, nullable=True)
+    date = db.Column(db.String(50), nullable=False, default=str(jdatetime.datetime.now()))
+
 class Messages(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=True)

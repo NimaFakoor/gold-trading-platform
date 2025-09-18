@@ -274,3 +274,42 @@ def administrator_messages():
     messages = Messages.query.order_by(Messages.id.desc()).all()
     return render_template("administrator/messages.html" , messages=messages, title='messages')
 ##
+@app.route("/administrator/announcements", methods=["GET", "POST"])
+@login_administrator_required
+def administrator_announcements():
+    """administrator_announcements"""
+    if not session.get("logged_in"):
+        abort(401)
+
+    if request.method == "POST":
+
+        message = request.form["message"]
+
+        a = Announcements(message = message, date = str(jdatetime.datetime.now())[0:19])
+        db.session.add(a)
+        db.session.commit()
+        
+        flash("اطلاعیه جدید با موفقیت ثبت شد")
+
+        return redirect(url_for("administrator_announcements"))
+    
+    announcements = Announcements.query.order_by(Announcements.id.desc()).all()
+    return render_template("administrator/announcements.html" , announcements=announcements, title='announcements')
+##
+@app.route("/administrator/delete/announcements/<sid>", methods=['POST', 'GET'])
+@login_administrator_required
+def administrator_delete_announcements(sid):
+    """delete announcement from the database."""
+    if not session.get("logged_in"):
+        abort(401)
+    try:
+        announcement = Announcements.query.filter(Announcements.id == sid).first()
+        db.session.delete(announcement)
+        db.session.commit()
+        error = "Deleted"
+        flash(error)
+    except Exception as e:
+        result = {"status": 0, "message": repr(e)}
+        flash(result)
+    return redirect(url_for("administrator_announcements"))
+##

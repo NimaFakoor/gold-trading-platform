@@ -24,6 +24,15 @@ def landing():
         title='landing'
     )
 
+@app.route('/about', methods=["GET", "POST"])
+def about():
+    """Renders the about page."""
+    
+    return render_template(
+        'pages/about.html',
+        title='about'
+    )
+
 @app.errorhandler(404)
 def not_found(e):
   return render_template("pages/error.html")
