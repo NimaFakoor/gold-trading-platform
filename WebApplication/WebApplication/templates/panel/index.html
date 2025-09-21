@@ -15,7 +15,7 @@
       <div>
         <div class="row">
 
-
+          {% if last_announcement %}
           <div class="card custom-card">
             <div class="card-header">
               <div class="card-title">
@@ -26,7 +26,7 @@
               <div class="text-bg-warning p-3">{{ last_announcement.message }}</div>
             </div>
           </div>
-
+          {% endif %}
 
           <div class="col-xl-3">
             <div class="card custom-card main-card-item">
