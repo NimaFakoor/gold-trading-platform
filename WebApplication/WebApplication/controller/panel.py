@@ -386,6 +386,9 @@ def buy():
         flash("درخواست خرید شما با موفقیت ثبت شد")
         flash("خرید شما بررسی و بعد از تأیید در حساب شما اعمال خواهد شد")
 
+        #heavy_process = Process(target=my_func,args=[tr.id],daemon=True)
+        #heavy_process.start()
+
         return redirect(url_for("transactions"))
 
     return render_template("panel/buy.html" ,last_bp=last_bp ,last_sp=last_sp , title='buy')

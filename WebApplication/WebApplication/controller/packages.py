@@ -34,6 +34,7 @@ from WebApplication import app, db
 from WebApplication.database import *
 
 import asyncio
+from multiprocessing import Process
 #
 
 ## Module : Format numbers
@@ -50,18 +51,22 @@ def convert_mithqal_gram(mithqal_weight):
     return gram
 ## Module : pricing
 def pricing():
-    url = "https://tabangohar.com/GheymatKhan/server_update.php"
+    url = "https://tabangohar.com/GheymatKhan/server_update_parsian.php"
     payload = {}
     headers = {}
     response = requests.request("GET", url, headers=headers, data=payload)
     GramPriceToman = json.loads(response.text)
-    GramPriceToman = GramPriceToman['c']
+    GramPriceToman = GramPriceToman['x44']
     bp = BuyPrice(amount = GramPriceToman, registration = str(jdatetime.datetime.now())[0:19])
     db.session.add(bp)
     db.session.commit()
     gm = convert_gram_mithqal(GramPriceToman)
-    f = gm - 200000
+    f = gm - 150000
     fp = convert_mithqal_gram(f)
     sp = SellPrice(amount = math.floor(float(fp)), registration = str(jdatetime.datetime.now())[0:19])
     db.session.add(sp)
     db.session.commit()
+## Module : pricing
+def my_func(args):
+    time.sleep(10)
+    print(args)
