@@ -61,6 +61,19 @@ def profile():
         flash("مشخصات شما با موفقیت ثبت شد")
         flash("مشخصات شما بررسی و وضعیت حساب شما تأیید خواهد شد")
 
+
+        TEXT = f"کاربر {first_and_last_name} با شماره تلفن {session['user_phone']} ثبت نام کرد لطفا او را تایید کنید"
+
+        #telegram
+        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
+        CHAT_ID = "100571768"
+        url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": TEXT}
+        headers = {}
+        requests.request("POST", url, headers=headers, data=payload)
+
         return redirect(url_for("dashboard"))
 
     return render_template("panel/profile.html" ,user=user , title='profile')
@@ -86,7 +99,25 @@ def deposit():
                            transactions_type = "واریز", amount = float(amount.replace(",", "")), weight=0, gold_rate=0, description="", content="", status="تأیید نشده", registration = str(jdatetime.datetime.now())[0:19])
         db.session.add(tr)
         db.session.commit()
-        
+                
+        weight=0
+        gold_rate=0
+        transactions_type = "واریز"
+        registration = str(jdatetime.datetime.now())[0:19]
+       
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید
+
+        #telegram
+        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
+        CHAT_ID = "100571768"
+        url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": TEXT}
+        headers = {}
+        requests.request("POST", url, headers=headers, data=payload)
+
+
         flash("درخواست واریز شما با موفقیت ثبت شد")
         flash("واریز شما بررسی و بعد از تأیید در حساب شما اعمال خواهد شد")
 
@@ -116,6 +147,34 @@ def withdrawal():
         db.session.add(tr)
         db.session.commit()
         
+        weight=0
+        gold_rate=0
+        transactions_type = "برداشت"
+        registration = str(jdatetime.datetime.now())[0:19]
+        
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید."
+
+        #eitaa
+        TOKEN = "bot199027:53d1669b-4a44-4486-bc72-a02b6bf3e447"
+        CHAT_ID = "nile_gold"       
+        url = f"https://eitaayar.ir/api/{TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": TEXT
+        }
+        #requests.post(url, data=payload)
+
+        #telegram
+        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
+        CHAT_ID = "100571768"
+        url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": TEXT}
+        headers = {}
+        requests.request("POST", url, headers=headers, data=payload)
+
+
         flash("درخواست برداشت شما با موفقیت ثبت شد")
         flash("برداشت شما بررسی و بعد از تأیید از در حساب شما اعمال خواهد شد")
 
@@ -150,7 +209,25 @@ def gold_deposit():
                            transactions_type = "واریز طلا", amount = 0, weight=float(weight.replace(",", "")), gold_rate=gold_rate, description="", content="", status="تأیید نشده", registration = str(jdatetime.datetime.now())[0:19])
         db.session.add(tr)
         db.session.commit()
-        
+
+
+        amount = 0
+        transactions_type = "واریز طلا"
+        registration = str(jdatetime.datetime.now())[0:19]
+
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید
+
+        #telegram
+        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
+        CHAT_ID = "100571768"
+        url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": TEXT}
+        headers = {}
+        requests.request("POST", url, headers=headers, data=payload)
+
+
         flash("درخواست واریز طلا شما با موفقیت ثبت شد")
         flash("واریز طلا شما بررسی و بعد از تأیید در حساب شما اعمال خواهد شد")
 
@@ -185,7 +262,24 @@ def gold_withdrawal():
                            transactions_type = "برداشت طلا", amount = 0, weight=float(weight.replace(",", "")), gold_rate=gold_rate, description="", content="", status="تأیید نشده", registration = str(jdatetime.datetime.now())[0:19])
         db.session.add(tr)
         db.session.commit()
-        
+
+
+        amount = 0
+        transactions_type = "برداشت طلا"
+        registration = str(jdatetime.datetime.now())[0:19]
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید
+
+        #telegram
+        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
+        CHAT_ID = "100571768"
+        url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": TEXT}
+        headers = {}
+        requests.request("POST", url, headers=headers, data=payload)
+
+
         flash("درخواست برداشت طلا شما با موفقیت ثبت شد")
         flash("برداشت طلا شما بررسی و بعد از تأیید در حساب شما اعمال خواهد شد")
 
@@ -221,6 +315,22 @@ def buy():
                            transactions_type = "خرید", amount = float(amount.replace(",", "")), weight=float(weight.replace(",", "")), gold_rate=gold_rate, description="", content="", status="تأیید نشده", registration = str(jdatetime.datetime.now())[0:19])
         db.session.add(tr)
         db.session.commit()
+
+        transactions_type = "خرید"
+        registration = str(jdatetime.datetime.now())[0:19]
+
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید
+
+        #telegram
+        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
+        CHAT_ID = "100571768"
+        url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": TEXT}
+        headers = {}
+        requests.request("POST", url, headers=headers, data=payload)
+
         
         flash("درخواست خرید شما با موفقیت ثبت شد")
         flash("خرید شما بررسی و بعد از تأیید در حساب شما اعمال خواهد شد")
@@ -257,7 +367,24 @@ def sell():
                            transactions_type = "فروش", amount = float(amount.replace(",", "")), weight=float(weight.replace(",", "")), gold_rate=gold_rate, description="", content="", status="تأیید نشده", registration = str(jdatetime.datetime.now())[0:19])
         db.session.add(tr)
         db.session.commit()
-        
+
+
+        transactions_type = "فروش"
+        registration = str(jdatetime.datetime.now())[0:19]
+
+        TEXT = f"کاربر {session['first_and_last_name']} با شماره تلفن {session['user_phone']} تراکنش {transactions_type} را به مبلغ {amount} ريال و وزن {weight} گرم با مظنه {gold_rate} ريال در تاریخ {registration} انجام داد؛ در تأیید آن اقدامات لازم را به عمل آورید
+
+        #telegram
+        TOKEN = "8071974746:AAFRLIbqfPHBclQXzB6m7n55Bwp9j2855aM"
+        CHAT_ID = "100571768"
+        url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+        payload = {
+            "chat_id": CHAT_ID,
+            "text": TEXT}
+        headers = {}
+        requests.request("POST", url, headers=headers, data=payload)
+
+
         flash("درخواست فروش شما با موفقیت ثبت شد")
         flash("فروش شما بررسی و بعد از تأیید در حساب شما اعمال خواهد شد")
 
